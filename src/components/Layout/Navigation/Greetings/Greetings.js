@@ -2,6 +2,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion"
 import "./Greetings.css";
 import { Link } from "react-router-dom";
+import logoGreetings from '../../../../assets/images/logo.jpg'
 //import { useState } from "react";
 
 /* const [ loading, setLoading ] = useState(false);
@@ -33,7 +34,7 @@ export default function Greetings() {
       <h1>DON REMOLO</h1>
       <img
         className="LogoSlide"
-        src={process.env.PUBLIC_URL + "/images/logo.jpg"}
+        src={logoGreetings}
         alt="Logo Pizzeria Don Remolo"
       />
       <Link to='/food-selection/'>
