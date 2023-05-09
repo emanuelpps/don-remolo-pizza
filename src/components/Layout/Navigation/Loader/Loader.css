@@ -1,0 +1,11 @@
+.pizzaLoader{
+    display: grid;
+}
+
+.pizzaBox{
+    margin: 200px;
+}
+
+.pizzaLoaderImg{
+    width: 5rem;
+}

@@ -1,0 +1,10 @@
+.footer-container {
+  padding-top: 50px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+}

@@ -1,0 +1,12 @@
+.foodSelection-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.selection-box{
+        color: #E94124;
+        margin-top: 2rem;
+        font-size: 35px;
+}

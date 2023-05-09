@@ -1,0 +1,51 @@
+.menu_item{
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 45rem;
+  background-color: #ffffff;
+  box-shadow: 0 7px 12px 9px rgb(0 0 0 / 7%);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.item-price{
+  font-size: 40px;
+}
+
+.item_image{
+  width: fit-content;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+
+.item_image img{
+  width: 300px;
+  overflow: hidden;
+  border-radius: 90px 90px 90px 90px;
+}
+
+.hdr{
+  margin-bottom: 20px;
+}
+
+.content{
+  width: fit-content;
+  max-height: 350px;
+  overflow: hidden;
+}
+
+.card-button{
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+}
+
+.stock-number{
+  font-size: 25px;
+}
