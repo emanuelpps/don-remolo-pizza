@@ -4,7 +4,7 @@ import "./CartWidget.css";
 import { Link } from "react-router-dom";
 
 export default function CartWidget() {
-  const { totalProducts } = useCartContext();
+  const { cart, totalProducts } = useCartContext();
   //const { handleShowCanvas, show} = useCartContext();
 
   return (
@@ -12,7 +12,7 @@ export default function CartWidget() {
       <Link to={'/cart'}>
       <button type="button" class="btn position-relative">
         <span class="position-relative start-100 translate-middle badge px-1 pt-1 bag-pill bg-danger">
-          {totalProducts}
+          {totalProducts()}
         </span>
         <svg
           className="BagImg"

@@ -6,24 +6,24 @@ import { useCartContext } from "../../../../../Context/CartContext";
 export const Item = ({ ...item}) => {
   const { addToCart } = useCartContext();
 
-  const [numberValue, setNumberValue] = useState(0);
+  const [quantity, setQuantity] = useState(0);
 
   const plus = () => {
-    if (numberValue < item.stock) {
-      setNumberValue(numberValue + 1);
+    if (quantity < item.stock) {
+      setQuantity(quantity + 1);
     } else {
       alert("Producto sin stock");
     }
   };
 
   const subs = () => {
-    if (numberValue > 0) setNumberValue(numberValue - 1);
+    if (quantity > 0) setQuantity(quantity - 1);
   };
 
-  const sendToCartAndReset = (quantity) => {
+  const sendToCartAndReset = () => {
     addToCart(item, quantity);
-    setNumberValue(0);
-    console.log(item,numberValue)
+    setQuantity(0);
+    console.log(item,quantity)
   };
 
   return (
@@ -39,7 +39,7 @@ export const Item = ({ ...item}) => {
           <button type="button" class="btn ButtonGreetings" onClick={plus}>
             +
           </button>
-          <span className="mt-4 stock-number">{numberValue}</span>
+          <span className="mt-4 stock-number">{quantity}</span>
           <button type="button" class="btn ButtonGreetings" onClick={subs}>
             -
           </button>

@@ -19,7 +19,7 @@ import { useCartContext } from "../../../../Context/CartContext";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cart } = useCartContext();
+  const { cart, totalProducts } = useCartContext();
 
   if (cart.length === 0) {
     return (
@@ -37,10 +37,7 @@ const Cart = () => {
                       <div className="p-5">
                         <div className="d-flex justify-content-between align-items-center mb-5">
                           <MDBTypography tag="h1" className="fw-bold mb-0">
-                            Tu Carrito esta Vacio
-                          </MDBTypography>
-                          <MDBTypography className="mb-0 text-muted">
-                            {cart.length}
+                            Tu Carrito esta Vacío
                           </MDBTypography>
                         </div>
                         <Link to="/food-selection">
@@ -86,7 +83,7 @@ const Cart = () => {
                             Mi Pedido
                           </MDBTypography>
                           <MDBTypography className="mb-0 text-muted">
-                            {cart.length}
+                            {totalProducts()}
                           </MDBTypography>
                         </div>
 

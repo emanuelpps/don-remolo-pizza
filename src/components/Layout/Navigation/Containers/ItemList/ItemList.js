@@ -16,7 +16,7 @@ export const ItemList = ({ items, categoryId, description }) => {
           <Item
             {...item}
             key={item.id}
-            category={categoryId}
+            category={item.category}
             featured={item.description}
           />
         ))}

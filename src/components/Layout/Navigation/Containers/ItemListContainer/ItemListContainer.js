@@ -46,7 +46,8 @@ export default function ItemListContainer(){
           <article>  
             {
                 <ItemList items={ items.filter(product => product.category === `${categoryId}`) } />
-            }  
+                
+            }
             </article>
           </section>
         ) 

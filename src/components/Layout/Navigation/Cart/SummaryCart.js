@@ -1,16 +1,8 @@
 import React from "react";
 import {
   MDBBtn,
-  MDBCard,
-  MDBCardBody,
-  MDBCardImage,
-  MDBCardText,
-  MDBCol,
-  MDBContainer,
-  MDBIcon,
   MDBInput,
-  MDBRow,
-  MDBTypography,
+  MDBTypography
 } from "mdb-react-ui-kit";
 import "./Cart.css";
 import { useCartContext } from "../../../../Context/CartContext";
@@ -29,9 +21,9 @@ const SummaryCart = ({ items, total }) => {
 
       <div className="d-flex justify-content-between mb-4">
         <MDBTypography tag="h5" className="text-uppercase">
-          {cart.length} Productos 
+          {totalProducts()} Productos 
         </MDBTypography>
-        <MDBTypography tag="h5">{totalPrice}</MDBTypography>
+        <MDBTypography tag="h5">${totalPrice()}</MDBTypography>
       </div>
 
       <MDBTypography tag="h5" className="text-uppercase mb-3">
@@ -64,7 +56,7 @@ const SummaryCart = ({ items, total }) => {
         <MDBTypography tag="h5" className="text-uppercase">
           Precio Total
         </MDBTypography>
-        <MDBTypography tag="h5">€ 137.00</MDBTypography>
+        <MDBTypography tag="h5">${totalPrice()}</MDBTypography>
       </div>
 
       <MDBBtn className="ButtonGreetings" color="#E74423" block size="lg">

@@ -2,12 +2,8 @@ import React from "react";
 import "./Cart.css";
 import {
   MDBBtn,
-  MDBCard,
-  MDBCardBody,
   MDBCardImage,
-  MDBCardText,
   MDBCol,
-  MDBContainer,
   MDBIcon,
   MDBInput,
   MDBRow,
@@ -15,10 +11,23 @@ import {
 } from "mdb-react-ui-kit";
 import { useCartContext } from "../../../../Context/CartContext";
 
-
-const ItemCart = ({ key, category, description, img, name, price, stock, quantity }) => {
-
-    const {addToCart, totalPrice, totalProducts, removeFromCart, clearFromCart} = useCartContext();
+const ItemCart = ({
+  category,
+  description,
+  img,
+  name,
+  price,
+  stock,
+  quantity,
+  id,
+}) => {
+  const {
+    addToCart,
+    totalPrice,
+    totalProducts,
+    removeFromCart,
+    clearFromCart,
+  } = useCartContext();
 
   return (
     <div className="">
@@ -42,19 +51,27 @@ const ItemCart = ({ key, category, description, img, name, price, stock, quantit
           </MDBTypography>
         </MDBCol>
         <MDBCol md="3" lg="3" xl="3" className="d-flex align-items-center">
-          <MDBBtn color="link" className="px-2">
-            <MDBIcon fas icon="minus" />
-          </MDBBtn>
+          <button
+            onClick={() => removeFromCart()}
+            color="link"
+            className="buttonCart px-4"
+          >
+            <i class="bi bi-dash-square"></i>
+          </button>
 
-          <MDBInput type="number" min="0" defaultValue={1} size="sm" />
+          <MDBInput className="text-center" type="number" min="0" defaultValue={quantity} size="sm" />
 
-          <MDBBtn color="link" className="px-2">
-            <MDBIcon color="secondary" fas icon="fa-plus"/>
-          </MDBBtn>
+          <button
+            onClick={() => addToCart(id)}
+            color="link"
+            className="buttonCart px-3"
+          >
+            <i color="#E74423" class="bi bi-plus-square"></i>
+          </button>
         </MDBCol>
         <MDBCol md="3" lg="2" xl="2" className="text-end">
           <MDBTypography tag="h6" className="mb-0">
-            $ {key.quantity * key.price}
+            $ {quantity * price}
           </MDBTypography>
         </MDBCol>
         <MDBCol md="1" lg="1" xl="1" className="text-end">
