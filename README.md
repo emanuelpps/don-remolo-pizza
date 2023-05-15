@@ -1,8 +1,7 @@
 (En Desarrollo...)
 
-<img>
-https://i.ibb.co/4tM5T9c/Captura-de-pantalla-2023-05-15-125041.jpg
-</img>
+<img src="https://i.ibb.co/4tM5T9c/Captura-de-pantalla-2023-05-15-125041.jpg"/>
+
 
 https://emanuelpps.github.io/don-remolo-pizza/
 
