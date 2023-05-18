@@ -27,9 +27,12 @@ export const ItemList = ({ items, categoryId, description }) => {
           <span>Volver al Menu</span>
         </button>
         </Link>
+
+        <Link to='/cart/'>
         <button className="ButtonGreetings" onClick={handleShow} >
           <span>Ver Mi Pedido</span>
         </button>
+        </Link>
       </section>
     </div>
   );

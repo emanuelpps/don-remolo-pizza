@@ -12,6 +12,7 @@ import {
 import { useCartContext } from "../../../../Context/CartContext";
 
 const ItemCart = ({
+  item,
   category,
   description,
   img,
@@ -52,7 +53,7 @@ const ItemCart = ({
         </MDBCol>
         <MDBCol md="3" lg="3" xl="3" className="d-flex align-items-center">
           <button
-            onClick={() => removeFromCart()}
+            onClick={() => removeFromCart(id)}
             color="link"
             className="buttonCart px-4"
           >
@@ -62,7 +63,7 @@ const ItemCart = ({
           <MDBInput className="text-center" type="number" min="0" defaultValue={quantity} size="sm" />
 
           <button
-            onClick={() => addToCart(id)}
+            onClick={() => addToCart(id,quantity)}
             color="link"
             className="buttonCart px-3"
           >

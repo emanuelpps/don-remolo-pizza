@@ -6,12 +6,12 @@ export const useCartContext = () => useContext(CartContext);
 const CartProvider = ({ defaultValue = [], children }) => {
   const [cart, setCart] = useState([]);
 
-  const addToCart = (item, quantity,id) => {
+  const addToCart = (item, quantity, id) => {
     if (isInCart(item.id)) {
       setCart(
-        cart.map((product) => {
+        cart.map(product => {
           return product.id === item.id
-            ? { ...product, quantity: product.length + quantity }
+            ? { ...product, quantity: product.quantity + quantity }
             : product;
         })
       );
@@ -21,8 +21,10 @@ const CartProvider = ({ defaultValue = [], children }) => {
     }
   };
 
-  const isInCart = (id) =>
-    cart.find((product) => product.id === id) ? true : false;
+  const isInCart = (id) =>{
+    return cart.find(product => product.id === id) ? true : false;
+  };
+  
 
   /* const addToCart = (item, qtyValue) => {
     console.log(item)
@@ -53,7 +55,7 @@ const CartProvider = ({ defaultValue = [], children }) => {
   };
 
   const removeFromCart = (id) => {
-    setCart(cart.filter((product) => product.id !== id));
+    setCart(cart.filter(product => product.id !== id));
   };
 
   const clearFromCart = () => setCart([]);

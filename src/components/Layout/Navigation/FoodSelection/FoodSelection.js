@@ -8,7 +8,7 @@ export default function FoodSelection() {
     <motion.div className="container foodSelection-box mb-4"initial={{x: 800}}
     animate={{x:0}}
     transition={{ease: 'easeOut', duration: 1}}>
-        <h1>¿Que vas a pedir?</h1>
+        <h1 className="text-center">¿Que vas a pedir?</h1>
       <div class="list-group selection-box">
         <Link to="/category/Pizzas" class="ButtonGreetings" aria-current="true">
           Pizzas

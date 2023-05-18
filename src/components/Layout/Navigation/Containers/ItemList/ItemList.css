@@ -3,3 +3,7 @@
   grid-template-columns: repeat(auto-fill, minmax(800px, 8fr));
   align-items: center;
 }
+
+
+@media only screen and (max-width: 560px) {
+}

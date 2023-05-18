@@ -36,18 +36,18 @@ export const Item = ({ ...item}) => {
         <div class="content">{item.featured}</div>
         <h2 className="item-price">${item.price}</h2>
         <div class="card-button">
-          <button type="button" class="btn ButtonGreetings" onClick={plus}>
+          <button type="button" class="btn ButtonCard" onClick={plus}>
             +
           </button>
           <span className="mt-4 stock-number">{quantity}</span>
-          <button type="button" class="btn ButtonGreetings" onClick={subs}>
+          <button type="button" class="btn ButtonCard" onClick={subs}>
             -
           </button>
         </div>
         <div>
           <button
             type="button"
-            class="btn ButtonGreetings"
+            class="btn ButtonCard"
             onClick={() => sendToCartAndReset()}
           >
             Agregar a mi Pedido

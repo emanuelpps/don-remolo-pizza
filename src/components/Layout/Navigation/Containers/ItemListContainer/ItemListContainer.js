@@ -43,7 +43,7 @@ export default function ItemListContainer(){
         return isLoading ?  <Loader/> : (
           <section className='text-center mt-5'>
           <h3 className='mb-5'>{categoryId}</h3>
-          <article>  
+          <article className="itemList">  
             {
                 <ItemList items={ items.filter(product => product.category === `${categoryId}`) } />
                 
