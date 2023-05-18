@@ -9,3 +9,13 @@
 .pizzaLoaderImg{
     width: 5rem;
 }
+
+
+@media only screen and (max-width: 560px) {
+    .pizzaLoaderImg{
+        width: 5rem;
+    }
+    .pizzaBox{
+        margin: auto;
+    }
+}
