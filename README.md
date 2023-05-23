@@ -1,5 +1,7 @@
 (En Desarrollo...)
 
+#![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+
 <img src="https://i.ibb.co/4tM5T9c/Captura-de-pantalla-2023-05-15-125041.jpg"/>
 
 
