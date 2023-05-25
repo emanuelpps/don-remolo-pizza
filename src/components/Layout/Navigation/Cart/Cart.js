@@ -32,8 +32,8 @@ const Cart = () => {
                   <MDBRow className="g-0">
                     <MDBCol lg="8">
                       <div className="p-5">
-                        <div className="d-flex justify-content-between align-items-center mb-5">
-                          <MDBTypography tag="h1" className="fw-bold mb-0">
+                        <div className="d-flex justify-content-between align-items-center mb-5 ">
+                          <MDBTypography tag="h2" className="fw-bold mb-0  text-center mx-auto">
                             Tu Carrito esta Vacío
                           </MDBTypography>
                         </div>

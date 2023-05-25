@@ -6,7 +6,7 @@ import { useCartContext } from "../../../../../Context/CartContext";
 export const Item = ({ ...item }) => {
   const { addToCart } = useCartContext();
 
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   const plus = () => {
     if (quantity < item.stock) {
@@ -22,7 +22,7 @@ export const Item = ({ ...item }) => {
 
   const sendToCartAndReset = () => {
     addToCart(item, quantity);
-    setQuantity(0);
+    setQuantity(1);
     console.log(item, quantity);
   };
 
