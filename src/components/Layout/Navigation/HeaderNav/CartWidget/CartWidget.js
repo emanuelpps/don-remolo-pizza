@@ -4,7 +4,7 @@ import "./CartWidget.css";
 import { Link } from "react-router-dom";
 
 export default function CartWidget() {
-  const { cart, totalProducts } = useCartContext();
+  const { totalProducts } = useCartContext();
   //const { handleShowCanvas, show} = useCartContext();
 
   return (

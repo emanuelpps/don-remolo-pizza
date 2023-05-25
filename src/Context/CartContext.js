@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import Swal from 'sweetalert2';
 const CartContext = React.createContext([]);
 
 export const useCartContext = () => useContext(CartContext);
@@ -54,15 +55,49 @@ const CartProvider = ({ defaultValue = [], children }) => {
 
   const clearFromCart = () => setCart([]);
 
-  const finishCheckout = (payMethod,address) =>{
+  const checkoutSuccess = (payMethod,address) =>{
     let wppProducts = cart.map(product => `  ${product.quantity} ${product.category} de ${product.name},`);
     const orderProducts = wppProducts.join('\n');
-    //const orderProducts = JSON.stringify(wppProducts + totalPrice());
-    //return orderProducts;
     window.location.href = 'https://api.whatsapp.com/send?phone=+549298461-1387&text=Hola!%20Quiero%20hacer%20un%20pedido%20de:%20' + orderProducts + ' Precio Total $' + totalPrice() + ' Voy a pagar con: ' +  payMethod + ', Mi direccion es: ' + address
-
-    
   }
+
+  const finishCheckout = (payMethod,address) =>{
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+    
+    swalWithBootstrapButtons.fire({
+      title: 'Desea finalizar su compra?',
+      text: "Será trasladado a Whatsapp",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, deseo comprar!',
+      cancelButtonText: 'No, cancelar!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire(
+          'Muchas Gracias!',
+          'Pronto te enviaremos tu pedido',
+          'success',
+        )
+        checkoutSuccess(payMethod,address)
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'Tu pedido no se realizó',
+          'error'
+        )
+      }
+    })
+    }
 
   return (
     <CartContext.Provider
@@ -75,7 +110,8 @@ const CartProvider = ({ defaultValue = [], children }) => {
         cart,
         reduceFromCart,
         sumFromCart,
-        finishCheckout
+        finishCheckout,
+        checkoutSuccess
       }}
     >
       {children}
