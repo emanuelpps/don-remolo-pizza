@@ -11,8 +11,10 @@ const CartProvider = ({ defaultValue = [], children }) => {
     localStorage.setItem("cart", JSON.stringify(cart))
   }, [cart]);
 
-  const addToCart = (item, quantity, id) => {
-    if (isInCart(item.id)) {
+  const addToCart = (item, quantity) => {
+    if(quantity === 0 ){
+      setCart([])
+    }else if (isInCart(item.id)) {
       setCart(
         cart.map((product) => {
           return product.id === item.id

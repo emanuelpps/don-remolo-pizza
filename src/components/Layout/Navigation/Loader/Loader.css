@@ -1,5 +1,6 @@
 .pizzaLoader{
     display: grid;
+    min-height: 50vh;
 }
 
 .pizzaBox{

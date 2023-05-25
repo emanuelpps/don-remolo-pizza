@@ -90,6 +90,30 @@
   }
 }
 
+.Button-Card{
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #E74423;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #E74423;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #E74423;
+}
+
+.bi{
+  fill: #E74423 ;
+  width: fit-content;
+  padding: auto;
+}
+
 @media screen and (max-width: 560px) {
   .menu_item{
     margin:auto;
