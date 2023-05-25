@@ -11,7 +11,7 @@ export const ItemList = ({ items, categoryId, description }) => {
 
   return (
     <div className="container">
-      <section className="row row-cols-1 row-cols-md-3 g-0">
+      <section className="row row-cols-1 row-cols-md-3 g-0 justify-content-center">
         {items?.map((item) => (
           <Item
             {...item}

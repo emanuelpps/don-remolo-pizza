@@ -7,3 +7,8 @@
 .bag-pill{
     padding-left: 10px;
 }
+
+#bag-button{
+    outline: none;
+    border: none;
+}

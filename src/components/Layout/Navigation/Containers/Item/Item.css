@@ -74,7 +74,23 @@
   font-size: 25px;
 }
 
-@media only screen and (max-width: 560px) {
+@media screen and (max-width: 960px) {
+  .menu_item{
+    margin:auto;
+    margin-bottom: 20px;
+    min-width: auto;
+    width: 100%;
+    height: auto;
+  }
+  .content{
+    width: fit-content;
+    max-height: 200px;
+    overflow: hidden;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 560px) {
   .menu_item{
     margin:auto;
     margin-bottom: 20px;

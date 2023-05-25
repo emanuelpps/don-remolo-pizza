@@ -9,27 +9,27 @@ export default function CartWidget() {
 
   return (
     <div>
-      <Link to={'/cart'}>
-      <button type="button" class="btn position-relative">
-        <span class="position-relative start-100 translate-middle badge px-1 pt-1 bag-pill bg-danger">
-          {totalProducts()}
-        </span>
-        <svg
-          className="BagImg"
-          version="1.0"
-          xmlns="http://www.w3.org/2000/svg"
-          width="12.000000pt"
-          height="512.000000pt"
-          viewBox="0 0 512.000000 512.000000"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <g
-            transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-            fill="#E74423"
-            stroke="none"
+      <Link to={"/cart"}>
+        <button id="bag-button" type="button" class="btn position-relative">
+          <span class="position-relative start-100 translate-middle badge px-1 pt-1 bag-pill bg-danger">
+            {totalProducts()}
+          </span>
+          <svg
+            className="BagImg"
+            version="1.0"
+            xmlns="http://www.w3.org/2000/svg"
+            width="12.000000pt"
+            height="512.000000pt"
+            viewBox="0 0 512.000000 512.000000"
+            preserveAspectRatio="xMidYMid meet"
           >
-            <path
-              d="M3483 4410 c-39 -16 -43 -40 -43 -270 l0 -221 25 -24 c23 -24 31 -25
+            <g
+              transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+              fill="#E74423"
+              stroke="none"
+            >
+              <path
+                d="M3483 4410 c-39 -16 -43 -40 -43 -270 l0 -221 25 -24 c23 -24 31 -25
 135 -25 71 0 122 5 143 14 43 17 85 68 93 111 3 19 7 35 9 35 1 0 27 -11 57
 -24 l54 -24 10 -64 10 -64 -56 -17 c-180 -53 -275 -246 -209 -423 21 -56 84
 -131 139 -166 l25 -15 3 -511 3 -510 -183 -228 -183 -229 -429 -3 c-259 -1
@@ -98,28 +98,28 @@ c-80 -156 46 -355 224 -355 64 1 117 20 163 62 76 68 105 173 74 262 -8 24
 29 -35 32 -53 19 -100 -100 -163 -167 -88 -16 17 -28 39 -28 48 0 12 10 6 34
 -20 82 -90 184 3 110 100 -28 37 -20 43 19 13z m-2963 -59 c0 -13 -82 -51
 -111 -51 -28 0 -91 31 -97 48 -3 9 26 12 102 12 58 0 106 -4 106 -9z"
-            />
-            <path
-              d="M1076 1968 c-32 -29 -126 -235 -126 -276 0 -21 8 -37 26 -51 60 -47
+              />
+              <path
+                d="M1076 1968 c-32 -29 -126 -235 -126 -276 0 -21 8 -37 26 -51 60 -47
 94 -18 167 142 51 110 56 127 46 154 -9 29 -44 53 -74 53 -8 0 -25 -10 -39
 -22z"
-            />
-            <path
-              d="M1346 1979 c-23 -14 -136 -250 -136 -285 0 -32 42 -74 73 -74 14 0
+              />
+              <path
+                d="M1346 1979 c-23 -14 -136 -250 -136 -285 0 -32 42 -74 73 -74 14 0
 34 8 45 18 23 20 132 253 132 283 0 27 -44 69 -72 69 -13 0 -31 -5 -42 -11z"
-            />
-            <path
-              d="M1602 1973 c-23 -21 -132 -254 -132 -284 0 -26 44 -69 70 -69 12 0
+              />
+              <path
+                d="M1602 1973 c-23 -21 -132 -254 -132 -284 0 -26 44 -69 70 -69 12 0
 31 5 42 11 24 13 138 248 138 285 0 32 -42 74 -73 74 -14 0 -34 -8 -45 -17z"
-            />
-            <path
-              d="M4168 2133 c-15 -16 -117 -143 -227 -283 -167 -212 -201 -260 -201
+              />
+              <path
+                d="M4168 2133 c-15 -16 -117 -143 -227 -283 -167 -212 -201 -260 -201
 -287 0 -59 67 -95 113 -60 38 29 447 561 447 582 0 12 -9 34 -21 49 -28 36
 -76 36 -111 -1z"
-            />
-          </g>
-        </svg>
-      </button>
+              />
+            </g>
+          </svg>
+        </button>
       </Link>
     </div>
   );
