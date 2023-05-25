@@ -1,7 +1,6 @@
 import React from "react";
 import "./Cart.css";
 import {
-  MDBBtn,
   MDBCardImage,
   MDBCol,
   MDBIcon,
@@ -10,6 +9,7 @@ import {
   MDBTypography,
 } from "mdb-react-ui-kit";
 import { useCartContext } from "../../../../Context/CartContext";
+import { GrClose } from "react-icons/gr";
 
 const ItemCart = ({
   item,
@@ -22,16 +22,10 @@ const ItemCart = ({
   quantity,
   id,
 }) => {
-  const {
-    addToCart,
-    totalPrice,
-    totalProducts,
-    removeFromCart,
-    clearFromCart,
-  } = useCartContext();
+  const { removeFromCart, reduceFromCart, sumFromCart } = useCartContext();
 
   return (
-    <div className="">
+    <div className="cart-item-container">
       <hr className="my-4" />
 
       <MDBRow className="mb-4 d-flex justify-content-between align-items-center">
@@ -53,17 +47,22 @@ const ItemCart = ({
         </MDBCol>
         <MDBCol md="3" lg="3" xl="3" className="d-flex align-items-center">
           <button
-            onClick={() => removeFromCart(id)}
+            onClick={() => reduceFromCart()}
             color="link"
             className="buttonCart px-4"
           >
             <i class="bi bi-dash-square"></i>
           </button>
-
-          <MDBInput className="text-center" type="number" min="0" defaultValue={quantity} size="sm" />
+          <MDBInput
+            className="text-center"
+            type="number"
+            min="0"
+            value={quantity}
+            size="sm"
+          />
 
           <button
-            onClick={() => addToCart(id,quantity)}
+            onClick={() => sumFromCart()}
             color="link"
             className="buttonCart px-3"
           >
@@ -79,6 +78,11 @@ const ItemCart = ({
           <a href="#!" className="text-muted">
             <MDBIcon fas icon="times" />
           </a>
+        </MDBCol>
+        <MDBCol md="1" lg="1" xl="1" className="text-end">
+          <button onClick={() => removeFromCart(id)} className="button-close">
+            <GrClose />
+          </button>
         </MDBCol>
       </MDBRow>
       <hr className="my-4" />

@@ -1,13 +1,10 @@
 import {
-  MDBBtn,
   MDBCard,
   MDBCardBody,
-  MDBCardImage,
   MDBCardText,
   MDBCol,
   MDBContainer,
   MDBIcon,
-  MDBInput,
   MDBRow,
   MDBTypography,
 } from "mdb-react-ui-kit";
@@ -87,10 +84,30 @@ const Cart = () => {
                           </MDBTypography>
                         </div>
 
-                        {
-                          cart.map(({id, category, description, img, name,price,stock, quantity}) => (<ItemCart key={id} category={category} description={description} img={img} name={name} price={price} stock={stock} quantity={quantity}/>))
-                          }
-                         <Link to="/food-selection">
+                        {cart.map(
+                          ({
+                            id,
+                            category,
+                            description,
+                            img,
+                            name,
+                            price,
+                            stock,
+                            quantity,
+                          }) => (
+                            <ItemCart
+                              id={id}
+                              category={category}
+                              description={description}
+                              img={img}
+                              name={name}
+                              price={price}
+                              stock={stock}
+                              quantity={quantity}
+                            />
+                          )
+                        )}
+                        <Link to="/food-selection">
                           <div className="pt-5">
                             <MDBTypography tag="h6" className="mb-0">
                               <MDBCardText

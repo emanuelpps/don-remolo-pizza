@@ -1,15 +1,24 @@
-import React from "react";
-import {
-  MDBBtn,
-  MDBInput,
-  MDBTypography
-} from "mdb-react-ui-kit";
+import React, { useState } from "react";
+import { MDBInput, MDBTypography } from "mdb-react-ui-kit";
 import "./Cart.css";
 import { useCartContext } from "../../../../Context/CartContext";
 
 const SummaryCart = ({ items, total }) => {
+  const [currentPayment, setCurrentPayment] = useState("Efectivo");
+  const [currentAddress, setCurrentAddress] = useState();
 
-    const { cart, totalPrice,totalProducts } = useCartContext();
+  const paymentMethod = (newPayment) => {
+    setCurrentPayment(newPayment);
+  };
+
+  const address = (newAddress) => {
+    setCurrentAddress(newAddress);
+  };
+
+  const payMethod = JSON.stringify(currentPayment);
+  const addressText = JSON.stringify(currentAddress);
+
+  const { totalPrice, totalProducts, finishCheckout } = useCartContext();
 
   return (
     <div className="p-5">
@@ -21,7 +30,7 @@ const SummaryCart = ({ items, total }) => {
 
       <div className="d-flex justify-content-between mb-4">
         <MDBTypography tag="h5" className="text-uppercase">
-          {totalProducts()} Productos 
+          {totalProducts()} Productos
         </MDBTypography>
         <MDBTypography tag="h5">${totalPrice()}</MDBTypography>
       </div>
@@ -32,22 +41,29 @@ const SummaryCart = ({ items, total }) => {
 
       <div className="mb-4 pb-2">
         <select
+          id="select-payment"
+          onChange={(event) => paymentMethod(event.target.value)}
           className="select p-2 rounded bg-grey"
           style={{ width: "100%" }}
+          value={currentPayment}
         >
-          <option value="1">Efectivo</option>
-          <option value="2">Tarjeta de Crédito</option>
-          <option value="3">Tarjeta de Débito</option>
-          <option value="4">Mercado Pago</option>
+          <option value="Efectivo">Efectivo</option>
+          <option value="Tarjeta de Credito">Tarjeta de Crédito</option>
+          <option value="Tarjeta de Debito">Tarjeta de Débito</option>
+          <option value="Mercado Pago">Mercado Pago</option>
         </select>
       </div>
 
       <MDBTypography tag="h5" className="text-uppercase mb-3">
-        Cupón de Descuento
+        ¿Donde enviamos tu pedido?
       </MDBTypography>
 
       <div className="mb-5">
-        <MDBInput size="lg" label="Ingrese su código" />
+        <MDBInput
+          onChange={(event) => address(event.target.value)}
+          size="lg"
+          label="Ingresá tu dirección"
+        />
       </div>
 
       <hr className="my-4" />
@@ -59,9 +75,14 @@ const SummaryCart = ({ items, total }) => {
         <MDBTypography tag="h5">${totalPrice()}</MDBTypography>
       </div>
 
-      <MDBBtn className="ButtonGreetings" color="#E74423" block size="lg">
+      <button
+        target="_blank"
+        onClick={() => finishCheckout(payMethod, addressText)}
+        className="ButtonGreetings"
+        color="#E74423"
+      >
         Finalizar Compra
-      </MDBBtn>
+      </button>
     </div>
   );
 };
