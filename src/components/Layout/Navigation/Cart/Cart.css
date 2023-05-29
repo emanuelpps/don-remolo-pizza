@@ -1,3 +1,7 @@
+.mi-pedido-title{
+  overflow-y: hidden!important;
+}
+
 .button-close{
   background-color: transparent;
   outline: none;

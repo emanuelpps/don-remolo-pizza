@@ -69,12 +69,12 @@ const ItemCart = ({
             <i color="#E74423" class="bi bi-plus-square"></i>
           </button>
         </MDBCol>
-        <MDBCol md="3" lg="2" xl="2" className="text-end">
+        <MDBCol md="3" lg="2" xl="2" className="text-md-center text-end">
           <MDBTypography tag="h6" className="mb-0">
             $ {quantity * price}
           </MDBTypography>
         </MDBCol>
-        <MDBCol md="1" lg="1" xl="1" className="text-end">
+        <MDBCol md="1" lg="1" xl="1" className="text-md-center  text-end">
           <a href="#!" className="text-muted">
             <MDBIcon fas icon="times" />
           </a>

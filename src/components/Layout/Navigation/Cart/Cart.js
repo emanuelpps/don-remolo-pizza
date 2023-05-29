@@ -74,12 +74,12 @@ const Cart = () => {
                 <MDBCardBody className="p-0">
                   <MDBRow className="g-0">
                     <MDBCol lg="8">
-                      <div className="p-5">
-                        <div className="d-flex justify-content-between align-items-center mb-5">
-                          <MDBTypography tag="h1" className="fw-bold mb-0">
+                      <div className="p-5 ">
+                        <div className="d-flex justify-content-between align-items-center mb-5 mi-pedido-title">
+                          <MDBTypography tag="h2">
                             Mi Pedido
                           </MDBTypography>
-                          <MDBTypography className="mb-0 text-muted">
+                          <MDBTypography className="text-muted">
                             <button
                             onClick={() => clearFromCart()} className="button-trash"
                             title="Vaciar Carrito">

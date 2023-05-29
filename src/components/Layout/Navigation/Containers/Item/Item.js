@@ -1,7 +1,7 @@
 import "./Item.css";
 import { useState } from "react";
 import { useCartContext } from "../../../../../Context/CartContext";
-//import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export const Item = ({ ...item }) => {
   const { addToCart } = useCartContext();
@@ -21,9 +21,35 @@ export const Item = ({ ...item }) => {
   };
 
   const sendToCartAndReset = () => {
+    sendToCartMessage();
     addToCart(item, quantity);
     setQuantity(1);
     console.log(item, quantity);
+  };
+
+  const sendToCartMessage = () => {
+    let timerInterval;
+    Swal.fire({
+      title: "Enviando a tu carrito",
+      html: "La ventana se ceerrará automáticamente <b></b> milliseconds.",
+      timer: 1000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+        const b = Swal.getHtmlContainer().querySelector("b");
+        timerInterval = setInterval(() => {
+          b.textContent = Swal.getTimerLeft();
+        }, 100);
+      },
+      willClose: () => {
+        clearInterval(timerInterval);
+      },
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log("I was closed by the timer");
+      }
+    });
   };
 
   return (
@@ -44,9 +70,7 @@ export const Item = ({ ...item }) => {
               class="bi bi-plus-lg"
               viewBox="0 0 16 16"
             >
-              <path
-                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
-              />
+              <path d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
             </svg>
           </button>
           <span className="mt-4 stock-number">{quantity}</span>
@@ -58,9 +82,7 @@ export const Item = ({ ...item }) => {
               class="bi bi-dash-lg"
               viewBox="0 0 16 16"
             >
-              <path
-                d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
-              />
+              <path d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
             </svg>
           </button>
         </div>
