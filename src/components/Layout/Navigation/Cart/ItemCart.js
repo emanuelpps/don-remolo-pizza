@@ -47,7 +47,7 @@ const ItemCart = ({
         </MDBCol>
         <MDBCol md="3" lg="3" xl="3" className="d-flex align-items-center">
           <button
-            onClick={() => reduceFromCart()}
+            onClick={() => reduceFromCart(id)}
             color="link"
             className="buttonCart px-4"
           >
@@ -62,7 +62,7 @@ const ItemCart = ({
           />
 
           <button
-            onClick={() => sumFromCart()}
+            onClick={() => sumFromCart(id)}
             color="link"
             className="buttonCart px-3"
           >
