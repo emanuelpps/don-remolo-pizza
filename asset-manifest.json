@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/don-remolo-pizza/static/css/main.27041968.css",
-    "main.js": "/don-remolo-pizza/static/js/main.15f298fa.js",
+    "main.js": "/don-remolo-pizza/static/js/main.3741f493.js",
     "static/media/pizza.gif": "/don-remolo-pizza/static/media/pizza.08278c1d286d9b875d0d.gif",
     "static/media/bootstrap-icons.woff?": "/don-remolo-pizza/static/media/bootstrap-icons.4753c5ba57962b4d7bf8.woff",
     "static/media/bootstrap-icons.woff2?": "/don-remolo-pizza/static/media/bootstrap-icons.6d63d0501e5ed7b79dab.woff2",
@@ -9,10 +9,10 @@
     "static/media/logo-nav-bar-noBrand.jpg": "/don-remolo-pizza/static/media/logo-nav-bar-noBrand.7d8623e624db5a4ea514.jpg",
     "index.html": "/don-remolo-pizza/index.html",
     "main.27041968.css.map": "/don-remolo-pizza/static/css/main.27041968.css.map",
-    "main.15f298fa.js.map": "/don-remolo-pizza/static/js/main.15f298fa.js.map"
+    "main.3741f493.js.map": "/don-remolo-pizza/static/js/main.3741f493.js.map"
   },
   "entrypoints": [
     "static/css/main.27041968.css",
-    "static/js/main.15f298fa.js"
+    "static/js/main.3741f493.js"
   ]
 }
