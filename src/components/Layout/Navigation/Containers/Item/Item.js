@@ -31,16 +31,9 @@ export const Item = ({ ...item }) => {
     let timerInterval;
     Swal.fire({
       title: "Enviando a tu carrito",
-      html: "La ventana se ceerrará automáticamente <b></b> milliseconds.",
+      html: "La ventana se cerrará automáticamente",
       timer: 1000,
       timerProgressBar: true,
-      didOpen: () => {
-        Swal.showLoading();
-        const b = Swal.getHtmlContainer().querySelector("b");
-        timerInterval = setInterval(() => {
-          b.textContent = Swal.getTimerLeft();
-        }, 100);
-      },
       willClose: () => {
         clearInterval(timerInterval);
       },
