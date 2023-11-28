@@ -1,4 +1,5 @@
-(En Desarrollo...)
+
+(In Development...)
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -13,31 +14,28 @@
 
 https://emanuelpps.github.io/don-remolo-pizza/
 
-Proyecto de ID for Ideas
+Project by ID for Ideas
 
-PROYECTO:
-PIZZERÍA DON REMOLO
-Menú
-de comidas para realizar pedidos online Gestor de pedidos p ara el local.
-#idea
-3
-Descripción del proyecto:
-Se requiere un menú intuitivo y simple de usar para realizar pedido s v ía whats app
+PROJECT:
+DON REMOLO PIZZERIA
+Online Order Menu and Order Manager for the Local.
+#idea3
 
-Objetivo:
-El usuario final debe poder armar su pedido online con todos los ítems agregados,
-conocer su total, y recibir confi rmación del local.
+Project Description:
+A user-friendly and simple-to-use menu is required for placing orders via WhatsApp.
 
-Requisitos:
-Los usuarios no necesitan estar registrados.
+Objective:
+The end-user should be able to build their online order with all items added, know the total, and receive confirmation from the local.
 
-Se debe poder visualizar el listado de comidas ofrecidas separadas en categorías
-Pizzas, Empanadas, Bebidas, Postres.
+Requirements:
+Users do not need to be registered.
 
-El usuario debe poder agregar X cantidad de cada item en su pedido.
+The list of offered meals should be visible, separated into categories:
+Pizzas, Empanadas, Beverages, Desserts.
 
-El pedido puede realizar su checkout sin p ago ni envío de por medio Se debe aclarar
-que es sólo en efectivo y con delivery propio del negocio.
+The user should be able to add X quantity of each item to their order.
 
-En el checkout se crea un texto automático que se envía al whatsapp del local.
+The checkout can be completed without payment or delivery involved. It should be clarified that it is only in cash and with the business's own delivery.
+
+In the checkout, an automatic text is created and sent to the local's WhatsApp.
 
